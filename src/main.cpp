@@ -2,7 +2,6 @@
 #include "knapsack.h"
 
 int main() {
-
   Instance inst;
 
   std::cin >> inst.n >> inst.capacity;
