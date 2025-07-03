@@ -12,16 +12,9 @@ struct BnBSolver::State {
 };
 
 ull BnBSolver::solve() {
-  /*
-   * Compara as razões v/w sem usar floats:
-   * a.v/a.w > b.v/b.w <=> a.v*b.w > b.v*a.w
-   */
-  std::sort(inst.items.begin(), inst.items.end(), [](const Item& a, const Item& b) {
-    return a.value*b.weight > b.value*a.weight;
-  });
+  std::sort(inst.items.begin(), inst.items.end());
 
   ull ans = 0;
-  
   std::priority_queue<State> q;
   
   /*

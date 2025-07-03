@@ -8,7 +8,8 @@ using ull = unsigned long long;
 using ld = long double;
 
 struct Item {
-  ull value, weight; 
+  ull value, weight;
+  bool operator<(const Item& other) const;
 };
 
 struct Instance {
