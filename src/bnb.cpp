@@ -29,16 +29,20 @@ ull BnBSolver::solve() {
    * é >= a resposta atual. É difícil mover essa lógica para dentro de State
    * porque calcular a cota superior depende de inst.items.
    */
-  auto add = [&](State s) -> void {
-    auto[v, w] = inst.items[s.idx];
-    s.upper_bound = s.value + s.capacity*v/w;
+  auto add = [&](State s) -> void { 
+    if (s.idx < inst.n) {
+      auto[v, w] = inst.items[s.idx];
+      s.upper_bound = s.value + s.capacity*v/w;
+    } else {
+      s.upper_bound = s.value;
+    }
     if (s.upper_bound > ans) q.push(s);
   };
   
   add({inst.capacity, 0, 0});
   while (!q.empty()) {
     State s = q.top(); q.pop();
-    if (s.capacity == 0 || s.idx == inst.n-1) {
+    if (s.capacity == 0 || s.idx == inst.n) {
       ans = std::max(ans, s.value);
       continue;
     }
