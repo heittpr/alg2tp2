@@ -9,6 +9,6 @@ int main() {
   for (auto&[v, w] : inst.items)
     std::cin >> v >> w;
 
-  BnBSolver s(inst);
+  FPTASSolver s(inst, 0.01);
   std::cout << s.solve() << std::endl;
 }
