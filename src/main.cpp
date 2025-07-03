@@ -9,6 +9,6 @@ int main() {
   for (auto&[v, w] : inst.items)
     std::cin >> v >> w;
 
-  FPTASSolver s(inst, 0.01);
+  Ap2Solver s(inst);
   std::cout << s.solve() << std::endl;
 }
