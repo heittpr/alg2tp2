@@ -3,7 +3,7 @@
 #include <algorithm>
 #include <vector>
 
-ull Ap2Solver::solve() {
+ull GreedySolver::solve() {
   std::vector<Item> items;
   for (auto[v, w] : inst.items)
     if (w <= inst.capacity) items.push_back({v, w});

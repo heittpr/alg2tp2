@@ -9,6 +9,6 @@ int main() {
   for (auto&[v, w] : inst.items)
     std::cin >> v >> w;
 
-  Ap2Solver s(inst);
+  GreedySolver s(inst);
   std::cout << s.solve() << std::endl;
 }

@@ -41,7 +41,7 @@ class FPTASSolver : public Solver {
     ld eps;
 };
 
-class Ap2Solver : public Solver {
+class GreedySolver : public Solver {
   public:
     using Solver::Solver;
     ull solve() override;
