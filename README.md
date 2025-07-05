@@ -2,12 +2,12 @@
 
 Este trabalho visa implementar e comparar experimentalmente três soluções para o problema da mochila:
 
-- Uma [solução exata](src/bnb.cpp) baseada em branch-and-bound.
+- Uma [solução exata](src/bnb.cpp) baseada em *Branch and Bound*.
 - Um [FPTAs](src/fptas.cpp) (*Full Polynomial-Time Approximation Scheme*).
 - Uma [solução gulosa](src/greedy.cpp) 2-aproximada.
 
 ### Instruções de compilação
-Para compilar o projeto, basta utilizar o [`Makefile`](Makefile) disponibilizado, executando o comando
+Para compilar o projeto, basta executar o comando
 
 ```sh
 make
