@@ -20,6 +20,7 @@ struct Instance {
 class Solver {
   public:
     Solver(const Instance& i);
+    virtual ~Solver() = default;
     virtual ull solve() = 0;
   protected:
     Instance inst;
