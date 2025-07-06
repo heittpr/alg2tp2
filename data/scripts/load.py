@@ -14,5 +14,7 @@ def load_data():
     
     df['size'] = df['testcase'].str[0].map(lambda x: 'small' if x =='f' else 'large')
 
+    df.to_csv('results.csv', index=False)
+
     return df
 
