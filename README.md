@@ -40,3 +40,14 @@ na raiz do projeto. O executável final será gerado em `bin/tp2`.
   tempo         Tempo gasto pelo solver em microssegundos.
   memória       Memória gasta pelo solver em KB.
 ```
+
+### Script de testes
+Para executar o script de testes certifique-se de ter Python, Pandas, MatplotLib etc.
+Esse script gera imagens e visualizações sob os csv's.
+No diretório data faça
+*Modo de uso:*
+```sh
+python gen.py
+```
+
+as visualizações serão salvas no diretório datavisulization
