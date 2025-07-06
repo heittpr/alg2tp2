@@ -132,20 +132,22 @@ A implementação foi realizada com a abordagem \textit{bottom-up}, que constró
 
 O algoritmo \(2\)-aproximativo garante que a resposta será pelo menos metade do valor ótimo, isto é, seja \(C^*\) a resposta exata e \(C\) a aproximada, então \(0 \leq C^*/C \leq 2\); isso será importante durante a análise experimental.
 
-O funcionamento do algoritmo consiste em, primeiramente, filtrar o subconjunto \(S\) de itens onde \(S = \{w \mid w \leq W\}\); após isso, estabelece-se uma ordem total no conjunto \(S\) de acordo com a razão valor/peso. Consequentemente, uma técnica \textbf{gulosa} é aplicada: os itens são inseridos na solução na medida em que a soma dos pesos não ultrapasse a capacidade da mochila. Finalmente, essa solução é comparada com o melhor item individual.\\
+O funcionamento do algoritmo consiste em, primeiramente, filtrar o subconjunto \(S\) de itens onde \(S = \{w \mid w \leq W\}\); após isso, estabelece-se uma ordem total no conjunto \(S\) de acordo com a razão valor/peso. Consequentemente, uma técnica \textbf{gulosa} é aplicada: os itens são inseridos na solução na medida em que a soma dos pesos não ultrapasse a capacidade da mochila.\\
 \textbf{Clama-se que:} O algoritmo supracitado tem fator de aproximação \(2\).\\
-\textit{Prova:} Seja \(A = \sum_{v_i \in S' \subseteq S} v_i\) a soma dos itens computada pela técnica gulosa, e seja \(B \in S\) o item de maior valor individual. O algoritmo aproximativo proposto retorna \(C = \max\{A, B\}\).
+\textit{Prova:} Seja \(C^*\) o valor da solução ótima e \(C\) o valor retornado pelo algoritmo proposto. Tome \(i\), o primeiro item que não pode ser incluso no conjunto resposta ao empregar a técnica gulosa.
 
-O algoritmo constrói uma solução fracionária até que a mochila esteja cheia. A solução ótima fracionária, que é sempre pegar o item de maior razão valor/peso, é um majorante da solução ótima do problema da mochila canônico, ou seja, \(C^* \leq C_f^*\). A solução ótima fracionária — que permite tomar uma fração de \(B\) — tem valor:\(C_f^* = A + \frac{v_B}{w_B} \cdot (W - w),\) onde \(w\) é o peso já adicionado. Isso implica que:
+Defina \(X = \sum_{v_i \in S' \subseteq S}v_i\) o valor dos itens escolhidos pelo algoritmo guloso, tal que todos couberam na mochila; e defina \(Y\) o valor do primeiro item que não coube.
 
-\[C_f^* \leq A + B.\]
+Note que \(C = \max\{X,Y\}\); isto é, o algoritmo retorna o máximo entre o total dos itens que couberam \(X\) e o valor do primeiro item que não coube \(Y\).
 
-Então, algum dos valores \(A\) ou \(B\) deve ser maior que ou igual à metade do valor ótimo \(C^*\):
+Está claro que, como os itens são escolhidos por ordem de valor específico \cite{aprox}, e seja o primeiro item a ultrapassar a capacidade, segue que \(C^* \leq X+Y\). 
 
-\[\frac{C^*}{2} \leq \max\{A, B\} = C \Rightarrow \frac{C^*}{C} \leq 2.\]
+Como \(C=\max\{X,Y\}\) então, \(2C \geq X+Y \geq C^*\). Portanto:
+
+\[\frac{C^*}{C} \leq 2.\]
 
 \begin{flushright}
-\(\square\)
+    \(\square\)
 \end{flushright}
 
 \subsection{Complexidade}
@@ -167,6 +169,7 @@ Neste trabalho foram implementadas três abordagens para a solução do problema
 
 \bibitem{levitin}LEVITIN, Anany. \textit{Introduction to The Design and Analysis of Algorithms}. 3rd edition. Addison-Wesley, 2012.
 
+\bibitem{aprox} \textit{Mochila booleana aproximada}. IME-USP. Acesso em : 04 de julho de 2025; Disponível em: \url{https://www.ime.usp.br/~pf/analise_de_algoritmos/aulas/mochila-aprox.html}.
 
 \end{thebibliography}
 
