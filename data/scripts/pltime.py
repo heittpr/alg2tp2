@@ -3,11 +3,6 @@ import seaborn as sns
 import os
 
 def plt_time(df, path='datavisualization'):
-    """
-    Serão gerados 14 gráficos:
-    - Para cada algoritmo (bnb, greedy, fptas para cada ε, e comparação geral),
-      um gráfico para testcases 'small' e outro para 'large'.
-    """
 
     os.makedirs(path, exist_ok=True)
     sns.set_theme(style="whitegrid")

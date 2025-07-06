@@ -2,8 +2,8 @@ import pandas as pd
 import os
 
 def load_data():
-    slv = pd.read_csv('../solvers.csv')
-    tsc = pd.read_csv('../testcases.csv')
+    slv = pd.read_csv('solvers.csv')
+    tsc = pd.read_csv('testcases.csv')
     df = pd.merge(slv, tsc, on='testcase', how='left')
 
     df['slv_type'] = df['solver'].str.split().str[0]
