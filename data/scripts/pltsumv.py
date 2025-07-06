@@ -18,9 +18,10 @@ def plt_sumv(df, path='datavisualization'):
 
     plt.figure(figsize=figsize)
     sns.lineplot(x='sumv', y='time', data=fptas_df, marker='o', linewidth=line_width)
+    plt.yscale('log')
     plt.title('Tempo de execução FPTAS (ε = 0.25) pela soma dos valores (small)', fontsize=font_size)
     plt.xlabel('Soma dos valores dos itens (sumv)', fontsize=font_size)
-    plt.ylabel('Tempo de execução (ms)', fontsize=font_size)
+    plt.ylabel('Tempo de execução (μs)', fontsize=font_size)
     plt.xticks(fontsize=font_size)
     plt.yticks(fontsize=font_size)
     plt.tight_layout()
