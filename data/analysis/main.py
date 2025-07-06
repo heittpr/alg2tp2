@@ -1,4 +1,5 @@
 from load import load_data
+from pltime import plt_time
 
 def main():
     df = load_data()
